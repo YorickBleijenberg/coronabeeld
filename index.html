@@ -59,6 +59,15 @@ img {
   max-width:1280px;
 }
   
+  .row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+  
 </style>
 </head>
 
@@ -80,9 +89,19 @@ img {
   <img src="https://github.com/YorickBleijenberg/COVID_data_RIVM_Netherlands/raw/master/plots/93_vaccinated.png" width="4800" height="2700">
   
 <div class="flourish-embed flourish-chart" data-src="visualisation/4933566"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+<p>
+   <div class="row">
+  <div class="column" style="background-color:#aaa;">
     <img src="https://github.com/YorickBleijenberg/COVID_data_RIVM_Netherlands/raw/master/plots/91_vaccine_to_groups_corr_size.png.png" width="4800" height="2700">
+  </div>
+  <div class="column" style="background-color:#bbb;">
     <img src="https://github.com/YorickBleijenberg/COVID_data_RIVM_Netherlands/raw/master/plots/91_vaccine_to_groups.png" width="4800" height="2700">
-    <p>
+
+  </div>
+</div> 
+    
+<p>
 <br>
     <img src="https://github.com/YorickBleijenberg/COVID_data_RIVM_Netherlands/raw/master/plots/90_vaccine_deliverd.png" width="4800" height="2700">
     
