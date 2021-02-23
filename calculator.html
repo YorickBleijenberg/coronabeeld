@@ -1,22 +1,56 @@
 <p>Vroeg concept / in ontwikkeling / nog niet af:</p><div class="slidecontainer">
-  <input type="range" min="18" max="60" value="50" id="myRange">
+  <div style="display: flex; align-items: center">
+    <input type="range" id="myRange">
+    <input type="number" id="myNumber">
+  </div>
   <p>Leeftijd: <span id="demo"></span></p>
 </div>
 
 
 <script>
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo");
-  output.innerHTML = slider.value;
+  const minAge = 18;
+  const maxAge = 60;
+  const initAge = 50;
 
-  slider.oninput = function() {
-    var test3 = parseInt((61 - this.value) * 1.6)
-    var overDagen = parseInt(47 + ((61 - this.value) * 1.14))
-    var d = new Date(2021, 04, 01)
+  const ageSlider = document.getElementById("myRange");
+  const ageNumber = document.getElementById("myNumber");
+  const output = document.getElementById("demo");
+  output.innerHTML = initAge;
 
-    d.setDate(d.getDate() + test3)
+  ageSlider.min = minAge;
+  ageSlider.max = maxAge;
+  ageSlider.value = initAge;
+  ageNumber.min = minAge;
+  ageNumber.max = maxAge;
+  ageNumber.value = initAge;
 
-    output.innerHTML = this.value + ". <br> Aan de beurt over: " + overDagen + " dagen. <br> Dat is na: " + d.toDateString();
+  const updateAgeSlider = (age) => {
+    ageSlider.value = age;
+  };
+
+  const updateAgeNumber = (age) => {
+    ageNumber.value = age;
+  };
+
+  const getOutputForAge = (age) => {
+    const test3 = parseInt((61 - age) * 1.6);
+    const overDagen = parseInt(47 + ((61 - age) * 1.14));
+    const d = new Date(2021, 4, 1);
+
+    d.setDate(d.getDate() + test3);
+
+    return age + ". <br> Aan de beurt over: " + overDagen + " dagen. <br> Dat is na: " + d.toDateString();
+  }
+
+  ageSlider.oninput = function() {
+    updateAgeNumber(this.value);
+    output.innerHTML = getOutputForAge(this.value);
+  }
+  ageNumber.oninput = function() {
+    if(this.value <= maxAge && this.value >= minAge) {
+      updateAgeSlider(this.value);
+      output.innerHTML = getOutputForAge(this.value);
+    }
   }
 
 </script>
