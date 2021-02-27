@@ -1,22 +1,10 @@
 <p>Vroeg concept / in ontwikkeling / nog niet af:</p><div class="slidecontainer">
-  <input type="range" min="18" max="60" value="50" id="myRange">
+  <div style="display: flex; align-items: center">
+    <input type="range" id="myRange">
+    <input type="number" id="myNumber">
+  </div>
   <p>Leeftijd: <span id="demo"></span></p>
 </div>
 
-
-<script>
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo");
-  output.innerHTML = slider.value;
-
-  slider.oninput = function() {
-    var test3 = parseInt((61 - this.value) * 1.6)
-    var overDagen = parseInt(47 + ((61 - this.value) * 1.14))
-    var d = new Date(2021, 04, 01)
-
-    d.setDate(d.getDate() + test3)
-
-    output.innerHTML = this.value + ". <br> Aan de beurt over: " + overDagen + " dagen. <br> Dat is na: " + d.toDateString();
-  }
-
-</script>
+<script src="calculator-data.js"></script>
+<script src="calculator.js"></script>
