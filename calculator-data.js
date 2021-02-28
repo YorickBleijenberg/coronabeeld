@@ -1,4 +1,5 @@
-const PEOPLE_PER_CATEGORY = {
+// bron: CBS, 27-2-2021 https://opendata.cbs.nl/statline/#/CBS/nl/dataset/7461bev/table?ts=1614445395201
+const PEOPLE_PER_AGE = {
   '0': 169497,
   '1': 169918,
   '2': 171951,
@@ -105,4 +106,41 @@ const PEOPLE_PER_CATEGORY = {
   '103': 185,
   '104': 90,
   '105+': 102
+};
+
+const PEOPLE_PER_CATEGORY = {
+  //willekeurige groepen die ik tegenkwam:
+  'specialCareResidents': 155000, // bewoners van verpleeghuizen en instellingen voor gehandicaptenzorg
+  'regularHealthcareEmployees': 269000, //  zorgmedewerkers van verpleeghuizen en kleinschalige woonvormen
+  'specialHealthcareEmployees': 178000, // zorgmedewerkers in de gehandicaptenzorg
+  'doorToDoorHealthCareEmployees': 166000, // wijkverpleging en WMO-ondersteuning
+  'acuteHealthcareEmployees': 30000, // verpleegkundigen en artsen op de intensive care, spoedeisende hulp, COVID-afdelingen en ambulancemedewerkers
+
+  // De daadwerkelijke groepen die in de prioriteits tabellen staan
+  // Zorggevers:
+  '': NaN, //Medewerkers directe COVID-zorg en ambulances: Pfizer
+  '': NaN, //Zorgmedewerkers verpleeghuizen en kleinschalige woonvormen: Pfizer of AstraZeneca
+  '': NaN, //Huisartsen en hun medewerkers: Moderna of AstraZeneca
+  '': NaN, //Zorgmedewerkers klinische medisch specialistische revalidatie: AstraZeneca
+  '': NaN, //Zorgmedewerkers gehandicaptenzorg: AstraZeneca
+  '': NaN, //Zorgmedewerkers GGZ en GGZ-crisisdiensten: AstraZeneca
+  '': NaN, //Zorgmedewerkers BES- en CAS-eilanden: Pfizer
+  '': NaN, //Zorgmedewerkers wijkverpleging: AstraZeneca
+  '': NaN, //Zorgmedewerkers Wmo-ondersteuning: AstraZeneca
+  '': NaN, //Pgb-zorgverleners: AstraZeneca
+  '': NaN, //Alle overige zorgmedewerkers: AstraZeneca
+  // Zorgnemers:
+  '': NaN, //Bewoners verpleeghuizen en mensen met een verstandelijke beperking in een instelling: Pfizer
+  '': NaN, //Bewoners kleinschalige woonvormen en mensen met een verstandelijke beperking in een instelling: Pfizer of Moderna
+  '': NaN, //Mobiele thuiswonenden vanaf 65 jaar: Pfizer
+  '': NaN, //Thuiswonenden van 60-64 (van oud naar jong): AstraZeneca
+  '': NaN, //Ouderen en zorgmedewerkers Waddeneilanden: Pfizer
+  '': NaN, //Intramurale GGZ-cliënten: Moderna of AstraZeneca
+  '': NaN, //Niet-mobiele thuiswonenden vanaf 65 jaar: Moderna
+  '': NaN, //Mensen van 18-60 jaar met medische indicatie: Pfizer, Moderna of AstraZeneca
+  '': NaN, //Inwoners St. Eustatius en Saba (alle bevolkingsgroepen): Moderna
+  '': NaN, //Inwoners Bonaire ouder dan 60 jaar: Pfizer
+  '': NaN, //Inwoners (overige) BES- en CAS-eilanden ouder dan 60 jaar: Pfizer
+  '': NaN, //Inwoners (overige) BES- en CAS-eilanden van 18 - 60 jaar: AstraZeneca
+  '': NaN, //Mensen van 50 tot en met 59 jaar en daarna van 18 tot en met 49 jaar zonder medische indicatie: AstraZeneca
 };

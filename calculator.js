@@ -4,8 +4,10 @@ const initAge = 50;
 
 const ageSlider = document.getElementById("myRange");
 const ageNumber = document.getElementById("myNumber");
-const output = document.getElementById("demo");
-output.innerHTML = initAge;
+const ageSpan = document.getElementById("age");
+const descriptionParagraph = document.getElementById("description");
+
+ageSpan.innerHTML = initAge;
 
 ageSlider.min = minAge;
 ageSlider.max = maxAge;
@@ -24,7 +26,7 @@ const updateAgeNumber = (age) => {
 
 const getPeopleBeforeAge = (age) => {
     let olderPeople = 0;
-    Object.entries(PEOPLE_PER_CATEGORY).forEach(([ageString, amount]) => {
+    Object.entries(PEOPLE_PER_AGE).forEach(([ageString, amount]) => {
         if (Number(ageString) >= age || (ageString === '105+' && age < 105)) {
             olderPeople += amount;
         }
@@ -39,16 +41,30 @@ const getOutputForAge = (age) => {
 
     d.setDate(d.getDate() + test3);
 
-    return age + ". <br> Er zijn " + getPeopleBeforeAge(age) + " mensen voor jou aan de beurt. <br> Aan de beurt over: " + overDagen + " dagen. <br> Dat is na: " + d.toDateString();
+    return "Aan de beurt over: " + overDagen + " dagen. <br> Dat is na: " + d.toDateString();
+}
+
+const setAgeSpan = (age) => {
+    ageSpan.innerText = String(age);
+}
+
+const setDescriptionDiv = (age) => {
+    descriptionParagraph.innerHTML = `Er zijn ${getPeopleBeforeAge(age)} ouder dan jij.
+    <br> Die zijn pas op ${getDateForNthAstraVaccine(getPeopleBeforeAge(age)).toDateString()} allemaal met AstraZeneca geprikt.`;
+}
+
+const setOutput = (age) => {
+    setAgeSpan(age);
+    setDescriptionDiv(age);
 }
 
 ageSlider.oninput = function() {
     updateAgeNumber(this.value);
-    output.innerHTML = getOutputForAge(this.value);
+    setOutput(this.value);
 }
 ageNumber.oninput = function() {
     if(this.value <= maxAge && this.value >= minAge) {
         updateAgeSlider(this.value);
-        output.innerHTML = getOutputForAge(this.value);
+        setOutput(this.value);
     }
 }
