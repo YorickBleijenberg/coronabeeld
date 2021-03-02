@@ -1,9 +1,84 @@
-<p>Vroeg concept / in ontwikkeling / nog niet af:</p><div class="slidecontainer">
+<p>Vroeg concept / in ontwikkeling / nog niet af:</p>
+
+<p>Selecteer je doelgroep</p>
+
+<select id="mySelect" onchange="myFunction()">
+<option value="">--Kies een optie--</option>
+        <optgroup label="Doelgroep medewerkers">
+      		<option value="Al gevaccineerd!">Acute zorg</option>
+      		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Verpleeghuis/Kleinschalige woonvorm</option>
+		<option value="Uitnodiging komende weken">Revalidatiemedewerkers</option>
+		<option value="Uitnodiging komende weken">Gehandicaptenzorg</option>
+		<option value="Uitnodiging komende weken">Wijkverpleging en Wmo-ondersteuning</option>
+	</optgroup>
+	<optgroup label="Doelgroep anders">
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Bewoner verpleeghuis</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Persoon met verstandelijke beperking in instelling</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Mobiele & thuiwonend vanaf 60 jaar</option>
+	</optgroup>
+	<optgroup label="Overig">
+      		<option value="Nog even wachten tot april... of langer, gebruik de silder!">18-60 zonder medische indicatie</option>
+      	<option value="Geen prikken voor kinderen">Onder de 18</option>
+    	</optgroup>
+</select>
+
+<p id="demo"></p>
+
+
+<br>
+<p>18-60 zonder medische indicatie? Gebruik de slider hieronder</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "Datum: " + x;
+}
+</script>
+
+<script>function outputUpdate(vol) {
+	document.querySelector('#volume').value = vol;
+  TKPJ()
+}
+function outputUpdate2(vol2) {
+	document.querySelector('#volume2').value = vol2;
+  TKPJ()
+}
+
+function TKPJ(){
+  		var Field1 = document.getElementById('Field1').value;
+  		var Field2 = document.getElementById('Field2').value;
+  		var Field3 = document.getElementById('Field3').value;
+  		var Format = document.getElementById('Format').value;
+  		var Slider1 = document.getElementById('Slider1').value;
+  		var Slider2 = document.getElementById('Slider2').value;
+			var vol = document.getElementById('volume').value;
+			var vol2 = document.getElementById('volume2').value;
+  		var Total = ((Field1*Field2*Field3*Format*vol*vol2)/100).toFixed(2);
+
+  		Total = Total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  		document.getElementById('Total').innerHTML = "Cost per year = "+ Total +" €";
+
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="slidecontainer">
   <div style="display: flex; align-items: center">
     <input type="range" id="myRange">
     <input type="number" id="myNumber">
   </div>
-  <p>Leeftijd: <span id="demo"></span></p>
+  <p>Leeftijd: <span id="demo-age"></span></p>
 </div>
 
 
@@ -14,7 +89,7 @@
 
   const ageSlider = document.getElementById("myRange");
   const ageNumber = document.getElementById("myNumber");
-  const output = document.getElementById("demo");
+  const output = document.getElementById("demo-age");
   output.innerHTML = initAge;
 
   ageSlider.min = minAge;
