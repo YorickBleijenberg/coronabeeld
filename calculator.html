@@ -1,21 +1,47 @@
-<p>Vroeg concept / in ontwikkeling / nog niet af:</p>
+<p>Let op! Nog in ontwikkeling / nog niet af: Je kunt hier echt geen rechten aan ontlenen.</p>
 
 <p>Selecteer je doelgroep</p>
 
 <select id="mySelect" onchange="myFunction()">
 <option value="">--Kies een optie--</option>
-        <optgroup label="Doelgroep medewerkers">
-      		<option value="Al gevaccineerd!">Acute zorg</option>
-      		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Verpleeghuis/Kleinschalige woonvorm</option>
-		<option value="Uitnodiging komende weken">Revalidatiemedewerkers</option>
-		<option value="Uitnodiging komende weken">Gehandicaptenzorg</option>
-		<option value="Uitnodiging komende weken">Wijkverpleging en Wmo-ondersteuning</option>
-	</optgroup>
+        <optgroup label="Doelgroep Zorgmedewerkers">
+      		<option value="Al gevaccineerd!">                                  Directe COVID-zorg en ambulances</option>
+      		<option value="Eerste prik gehad, of uitnodiging komt binnenkort"> Zorgmedewerkers verpleeghuizen en kleinschalige woonvormen</option>
+		<option value="Huisartsen, hebben eerste prik gehad. Voor de rest: uitnodiging komende weken."> Huisartsen en hun medewerkers</option>
+		<option value="Uitnodiging verzonden">                         Klinische medisch specialistische revalidatie</option>
+		<option value="Uitnodiging verzonden of in de komende weken">  Gehandicaptenzorg</option>
+		<option value="Uitnodiging verzonden of komt binnenkort">      GGZ en GGZ-crisisdiensten</option>
+		<option value="Uitnodiging verzonden of komt binnenkort">      BES- en CAS-eilanden</option>
+		<option value="Uitnodiging verzonden of komt binnenkort">      Wijkverpleging</option>
+		<option value="Uitnodiging binnenkort!">                       Wmo-ondersteuning/option>
+		<option value="Uitnodiging binnenkort!">                       Pgb-zorgverleners</option>
+		<option value="Vanaf mei">                                     Alle overige zorgmedewerkers</option>
+	
+
+
+
+</optgroup>
 	<optgroup label="Doelgroep anders">
-		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Bewoner verpleeghuis</option>
-		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Persoon met verstandelijke beperking in instelling</option>
-		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Mobiele & thuiwonend vanaf 60 jaar</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Bewoners verpleeghuizen</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Bewoners kleinschalige woonvormen</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Mensen met een verstandelijke beperking in een instelling</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Thuiswonenden vanaf 65 jaar die naar priklocatie kunnen komen</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Thuiswonenden van 60 tot en met 64 jaar die naar huisarts kunnen</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Ouderen en zorgmedewerkers Waddeneilanden</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Intramurale GGZ-cliënten</option>
+		<option value="Eerste prik gehad, of uitnodiging komt binnenkort">Thuiswonenden vanaf 65 jaar die niet naar priklocatie of huisarts kunnen komen</option>
+		<option value="Uitnodiging komt binnenkort">Mensen van 18 tot en met 59 jaar met medisch *hoog*risico</option>
+		<option value="Vanaf mei">Mensen van 18 tot en met 59 jaar met een medische indicatie (overig)</option>
+		<option value="Sinds februari">Inwoners St. Eustatius en Saba (alle bevolkingsgroepen)</option>
+		<option value="Sinds februari">Inwoners Bonaire ouder dan 60 jaar</option>
+		<option value="Sinds februari">Inwoners (overige) BES- en CAS-eilanden ouder dan 60 jaar</option>
+		<option value="Vanaf mei"> Inwoners (overige) BES- en CAS-eilanden van 18 tot en met 60 jaar</option>
+		<option value="Vanaf mei"> Mensen van 50 tot en met 59 jaar</option>
+
+
+
 	</optgroup>
+
 	<optgroup label="Overig">
       		<option value="Nog even wachten tot mei... of langer, gebruik de silder!">18-60 zonder medische indicatie</option>
       	<option value="Geen prikken voor kinderen">Onder de 18</option>
@@ -31,7 +57,7 @@
 <script>
 function myFunction() {
   var x = document.getElementById("mySelect").value;
-  document.getElementById("demo").innerHTML = "Datum: " + x;
+  document.getElementById("demo").innerHTML = "Status: " + x;
 }
 </script>
 
