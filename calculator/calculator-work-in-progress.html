@@ -1,0 +1,55 @@
+<p>Vroeg concept / in ontwikkeling / nog niet af:</p>
+
+<p>Selecteer je doelgroep</p>
+
+<select id="group-selector" onchange="onSelectGroup()">
+    <option value="DIRECT_COVID_CARE_EMPLOYEES">Medewerkers directe COVID-zorg en ambulances</option>
+    <option value="NURSING_HOME_EMPLOYEES">Zorgmedewerkers verpleeghuizen en kleinschalige woonvormen</option>
+    <option value="GENERAL_PRACTICE_EMPLOYEES">Huisartsen en hun medewerkers</option>
+    <option value="MEDICAL_REVALIDATION_EMPLOYEES">Zorgmedewerkers klinische medisch specialistische revalidatie</option>
+    <option value="DISABLED_CARE_EMPLOYEES">Zorgmedewerkers gehandicaptenzorg</option>
+    <option value="MENTAL_CARE_EMPLOYEES">Zorgmedewerkers GGZ en GGZ-crisisdiensten</option>
+    <option value="NON_MAINLAND_EMPLOYEES">Zorgmedewerkers BES- en CAS-eilanden</option>
+    <option value="LOCAL_CARE_EMPLOYEES">Zorgmedewerkers wijkverpleging *Helft van samen met 'SOCIAL_SUPPORT_EMPLOYEES'</option>
+    <option value="SOCIAL_SUPPORT_EMPLOYEES">Zorgmedewerkers Wmo-ondersteuning *Helft van samen met 'LOCAL_CARE_EMPLOYEES'</option>
+    <option value="PERSONAL_BUDGET_EMPLOYEES">Pgb-zorgverleners</option>
+    <option value="OTHER_HEALTHCARE_EMPLOYEES">Alle overige zorgmedewerkers</option>
+    <option value="NURSING_HOME_RESIDENTS">Bewoners verpleeghuizen en mensen met een verstandelijke beperking in een instelling</option>
+    <option value="SMALL_HOUSING_RESIDENTS">Bewoners kleinschalige woonvormen en mensen met een verstandelijke beperking in een instelling</option>
+    <option value="MOBILE_HOME_LIVING_ELDERLY">Mobiele thuiswonenden vanaf 65 jaar</option>
+    <option value="HEALTY_HOME_LIVING_MID_ELDERLY">Thuiswonenden van 60-64 (van oud naar jong)</option>
+    <option value="FRISIAN_ISLAND_ELDERLY">Ouderen Waddeneilanden</option>
+    <option value="FRISIAN_ISLAND_HEALTH_CARE_EMPLOYEES">Zorgmedewerkers Waddeneilanden</option>
+    <option value="MENTAL_CARE_PATIENTS">Intramurale GGZ-cliënten</option>
+    <option value="IMMOBILE_HOME_LIVING_ELDERLY">Niet-mobiele thuiswonenden vanaf 65 jaar</option>
+    <option value="HOME_LIVING_AT_HIGH_RISK_NON_ELDERLY">Mensen van 18-60 jaar met medische indicatie (hoog risico)</option>
+    <option value="HOME_LIVING_AT_RISK_NON_ELDERLY">Mensen van 18-60 jaar met medische indicatie</option>
+    <option value="ST_EUSTATIUS_AND_SABA_RESIDENTS">Inwoners St. Eustatius en Saba (alle bevolkingsgroepen)</option>
+    <option value="BONAIRE_RESIDENTS_ELDERLY">Inwoners Bonaire ouder dan 60 jaar</option>
+    <option value="OTHER_NON_MAINLAND_ELDERLY">Inwoners (overige) BES- en CAS-eilanden ouder dan 60 jaar</option>
+    <option value="OTHER_NON_MAINLAND_NON_ELDERLY">Inwoners (overige) BES- en CAS-eilanden van 18 - 60 jaar</option>
+    <option value="OTHERS">Mensen van 50 tot en met 59 jaar en daarna van 18 tot en met 49 jaar zonder medische indicatie</option>
+</select>
+
+<p id="demo"></p>
+
+
+<br>
+<p>18-60 zonder medische indicatie? Gebruik de slider hieronder</p>
+
+<div class="slidecontainer">
+    <div style="display: flex; align-items: center">
+        <input type="range" id="myRange">
+        <input type="number" id="myNumber">
+    </div>
+    <p>Leeftijd: <span id="age"></span></p>
+    <p id="description"></p>
+</div>
+
+<script src="get-groups-based-on-priority.js"></script>
+<script src="get-vaccins-per-category.js"></script>
+<script src="get-people-per-category.js"></script>
+<script src="calculator-data.js"></script>
+<script src="get-date-for-nth-vaccin.js"></script>
+<script src="astrazenica.js"></script>
+<script src="calculator-code.js"></script>
